@@ -7,11 +7,11 @@ import org.danicv.poointerfaces.modelo.Cliente;
 public interface CrudRepositorio {
 	List<Cliente> listar();
 
-	Cliente porId(int id);
+	Cliente porId(Integer id);
 
 	void crearCliente(Cliente cliente);
 
 	void editar(Cliente cliente);
 
-	void eliminar(int id);
+	void eliminar(Integer id);
 }

@@ -1,7 +1,9 @@
 package org.danicv.poointerfaces.modelo;
 
+import java.util.Objects;
+
 public class Cliente {
-	private int id;
+	private Integer id;
 	private String nombre;
 	private String apellido;
 	private static int ultimoId;
@@ -10,14 +12,13 @@ public class Cliente {
 		this.id = ++ultimoId;
 	};
 
-	public Cliente(int id, String nombre, String apellido) {
+	public Cliente( String nombre, String apellido) {
 		this();
-		this.id = id;
 		this.nombre = nombre;
 		this.apellido = apellido;
 	}
 
-	public int getId() {
+	public Integer getId() {
 		return id;
 	}
 
@@ -44,6 +45,18 @@ public class Cliente {
 	@Override
 	public String toString() {
 		return "id=" + id + ", nombre=" + nombre + ", apellido=" + apellido;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Cliente other = (Cliente) obj;
+		return Objects.equals(id, other.id);
 	}
 
 }
